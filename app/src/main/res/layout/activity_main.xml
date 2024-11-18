@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ak_banner"
+        android:layout_width="match_parent"
+        android:layout_height="30mm"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ak_bannar" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ak_banner"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ak_btn_shep"
+        android:text="Show Ads"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ak_btn_shep"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button1"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:text="Show Ads"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ak_btn_shep"
+        android:text="Show Ads"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ak_btn_shep"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_below="@id/button3"
+        android:text="Show Ads"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ak_btn_shep"
+        android:text="Show Ads"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/changeIpButton"
+        android:layout_width="30mm"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/white"
+        android:background="@drawable/developer_ni_kajol"
+        android:text="Changing IP Address"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/dvevloper_ni_kajol"
+        android:layout_width="50mm"
+        android:layout_height="wrap_content"
+        android:background="@drawable/developer_ni_kajol"
+        android:text="Developer By Sabbir Technology"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

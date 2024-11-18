@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="app_name">@string/APP_LABEL</string>
+                    <!--    Change This Visit Link-->
+
+    <string name="Visit_Link_1">https://chikraighotoops.com/4/8474566</string>
+    <string name="Visit_Link_2">https://chikraighotoops.com/4/8474565</string>
+    <string name="Visit_Link_3">https://chikraighotoops.com/4/8474563</string>
+    <string name="Visit_Link_4">https://chikraighotoops.com/4/8474562</string>
+    <string name="Visit_Link_5">https://chikraighotoops.com/4/8474551</string>
+
+                    <!--    Change This Developer Link-->
+
+    <string name="dvevloper_ni_kajol">https://t.me/SAS_Agent_SHIHAB</string>
+
+</resources>

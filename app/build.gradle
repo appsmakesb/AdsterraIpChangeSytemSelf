@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.hosen.demo'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId System.getenv("PKG_NAME")
+        minSdk 26
+        targetSdk 34
+        versionCode Integer.parseInt(System.getenv("VERSION_CODE_HEADER"))
+        versionName System.getenv("VERSION_NAME_HEADER")
+        multiDexEnabled true
+
+        manifestPlaceholders = [onesignal_app_id: "5ba48ad2-59f4-4503-b62e-8ea290c610f7",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        buildConfigField("String", "WEB_URL", "\"${System.getenv("WEB_URL")}\"")
+        resValue("string", "APP_LABEL", "\"${System.getenv("APP_LABEL")}\"")
+        resValue("string", "PKG_NAME", "\"${System.getenv("PKG_NAME")}\"")
+
+    }
+
+    signingConfigs {
+        create("release") {
+            def keystoreProperties = new Properties()
+            def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+            if (keystorePropertiesFile.exists()) {
+                keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+            }
+            storeFile = file(keystoreProperties.getProperty("storeFile"))
+            storePassword = keystoreProperties.getProperty("storePassword")
+            keyAlias = keystoreProperties.getProperty("keyAlias")
+            keyPassword = keystoreProperties.getProperty("keyPassword")
+        }
+    }
+
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.getByName("release")
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+}
