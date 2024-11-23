@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace System.getenv("PKG_NAME")
+    namespace 'com.hosen.demo'
     compileSdk 34
 
     defaultConfig {
