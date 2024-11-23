@@ -3,21 +3,25 @@ workflows:
         name: Android app
         instance_type : mac_mini_m1
         environment:
-          vars:
-            java: 1.8
-            gradle: 8.0
-            JAVA_HOME: "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+            vars:
+                java: 17 # Specify Java 17
+                gradle: 8.0
+                JAVA_HOME: "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home" # Point to Java 17
         scripts:
             - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             - brew install imagemagick
+            - brew install openjdk@17 # Ensure Java 17 is installed
+            - export JAVA_HOME=$(/usr/libexec/java_home -v 17) # Set Java 17 as default
+            - export PATH="$JAVA_HOME/bin:$PATH" # Ensure Java binaries are in the PATH
+            - java -version # Verify Java 17
             - chmod +x $FCI_BUILD_DIR/launcher_icon.sh
             - $FCI_BUILD_DIR/launcher_icon.sh $icon_url
             - chmod +x $FCI_BUILD_DIR/launcher_round.sh
             - $FCI_BUILD_DIR/launcher_round.sh $icon_url
             - chmod +x $FCI_BUILD_DIR/launcher_foreground.sh
             - $FCI_BUILD_DIR/launcher_foreground.sh $icon_url $KEYSTORE_URL $STOREPASS $KEYALIAS $KEYPASS
-            - ls -l "$FCI_BUILD_DIR" 
-            - chmod +x "$FCI_BUILD_DIR/gradlew" 
+            - ls -l "$FCI_BUILD_DIR"
+            - chmod +x "$FCI_BUILD_DIR/gradlew"
             - "$FCI_BUILD_DIR/gradlew assembleRelease"
             - "$FCI_BUILD_DIR/gradlew bundleRelease"
         artifacts:
