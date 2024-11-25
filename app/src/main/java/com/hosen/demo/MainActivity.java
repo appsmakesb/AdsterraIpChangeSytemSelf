@@ -7,12 +7,18 @@ import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
+import com.hosen.demo.R;
+import com.hosen.demo.BuildConfig;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
+
+    private static final String WEB_URL = BuildConfig.WEB_URL;
+    private static final String WEB_URL_2 = BuildConfig.WEB_URL_2;
+    private static final String WEB_URL_3 = BuildConfig.WEB_URL_3;
+    private static final String WEB_URL_4 = BuildConfig.WEB_URL_4;
 
     private WifiManager wifiManager;
 
@@ -56,11 +62,21 @@ public class MainActivity extends AppCompatActivity {
         Button button5 = findViewById(R.id.button5);
         Button dvevloper_ni_kajol = findViewById(R.id.dvevloper_ni_kajol);
 
-        button1.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_1)));
-        button2.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_2)));
-        button3.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_3)));
-        button4.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_4)));
-        button5.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_5)));
+        button1.setOnClickListener(v -> openLink(WEB_URL));
+//        button1.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_1)));
+
+        button2.setOnClickListener(v -> openLink(WEB_URL_2));
+//        button2.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_2)));
+
+        button3.setOnClickListener(v -> openLink(WEB_URL_3));
+//        button3.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_3)));
+
+        button4.setOnClickListener(v -> openLink(WEB_URL_4));
+//        button4.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_4)));
+
+        button5.setOnClickListener(v -> openLink("https://zireemilsoude.net/4/8474563"));
+//        button5.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_5)));
+
         dvevloper_ni_kajol.setOnClickListener(v -> openLink(getString(R.string.dvevloper_ni_kajol)));
 
     }
