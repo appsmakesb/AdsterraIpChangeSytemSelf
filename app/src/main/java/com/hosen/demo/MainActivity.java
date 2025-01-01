@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(v -> openLink(WEB_URL_4));
 //        button4.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_4)));
 
-        button5.setOnClickListener(v -> openLink("https://zireemilsoude.net/4/8474563"));
+        button5.setOnClickListener(v -> openLink("https://whomeenoaglauns.com/4/8474566"));
 //        button5.setOnClickListener(v -> openLink(getString(R.string.Visit_Link_5)));
 
         dvevloper_ni_kajol.setOnClickListener(v -> openLink(getString(R.string.dvevloper_ni_kajol)));
